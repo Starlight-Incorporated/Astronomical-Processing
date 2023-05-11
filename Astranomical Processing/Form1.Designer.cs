@@ -36,25 +36,28 @@
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(12, 35);
+            this.txtInput.Location = new System.Drawing.Point(16, 43);
+            this.txtInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(188, 20);
+            this.txtInput.Size = new System.Drawing.Size(249, 22);
             this.txtInput.TabIndex = 0;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(223, 35);
+            this.btnSearch.Location = new System.Drawing.Point(297, 43);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(223, 85);
+            this.btnSort.Location = new System.Drawing.Point(297, 105);
+            this.btnSort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(75, 23);
+            this.btnSort.Size = new System.Drawing.Size(100, 28);
             this.btnSort.TabIndex = 2;
             this.btnSort.Text = "Sort";
             this.btnSort.UseVisualStyleBackColor = true;
@@ -62,22 +65,25 @@
             // lstArrayDisplay
             // 
             this.lstArrayDisplay.FormattingEnabled = true;
-            this.lstArrayDisplay.Location = new System.Drawing.Point(12, 85);
+            this.lstArrayDisplay.ItemHeight = 16;
+            this.lstArrayDisplay.Location = new System.Drawing.Point(16, 105);
+            this.lstArrayDisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstArrayDisplay.Name = "lstArrayDisplay";
-            this.lstArrayDisplay.Size = new System.Drawing.Size(188, 160);
+            this.lstArrayDisplay.Size = new System.Drawing.Size(249, 196);
             this.lstArrayDisplay.TabIndex = 3;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 259);
+            this.ClientSize = new System.Drawing.Size(420, 319);
             this.Controls.Add(this.lstArrayDisplay);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtInput);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.Text = "Astranomical Processing";
+            this.Text = "Astronomical Processing";
             this.ResumeLayout(false);
             this.PerformLayout();
 
