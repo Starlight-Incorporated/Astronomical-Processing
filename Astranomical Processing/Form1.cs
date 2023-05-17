@@ -51,13 +51,13 @@ namespace Astranomical_Processing
             }
             catch (FormatException)
             {
-                MessageBox.Show("Unable to parse" + input);
+                MessageBox.Show("Unable to parse " + input, "Error");
             }
             
             if (parsed == true)
             {
                 neutrinosArray[editSelected] = searchTerm;
-                display();
+                sortBubble();                
             }
         }// Edit method
 
@@ -94,7 +94,7 @@ namespace Astranomical_Processing
             }
             catch (FormatException)
             {
-                MessageBox.Show("Unable to parse" + input);
+                MessageBox.Show("Unable to parse " + input, "Error");
             }
 
             while (found != true && first <= last && parsed == true)
@@ -107,21 +107,24 @@ namespace Astranomical_Processing
                     position = middle;
                     compCount++;
 
-                    MessageBox.Show("Your search has been found after " + compCount + " comparisons.", "Success!");
+                    MessageBox.Show("Your search has been found after " + compCount + " attempts.", "Success!");
+                    return;
                 }
 
-                else if (neutrinosArray[middle] > searchTerm)
+                else if (neutrinosArray[middle] >= searchTerm)
                 {
-                    last = middle;
+                    last = middle -1;
                     compCount++;
                 }
 
                 else
                 {
-                    first = middle;
+                    first = middle +1;
                     compCount++;
                 }
             }
+
+            MessageBox.Show("Search was not found", "Error");
         }// Binary search method to be called later
 
         public void sortBubble()
@@ -135,8 +138,48 @@ namespace Astranomical_Processing
                         neutrinosArray[j] = neutrinosArray[j + 1];
                         neutrinosArray[j + 1] = tempVar;
                     }
+            display();
         }// Bubble sort method to be called later
 
+        public void generateNumbers()
+        {
+            Random randomNumbers = new Random();
+            for(int i = 0; i < neutrinosArray.Length; i++)
+            {
+                neutrinosArray[i] = randomNumbers.Next(10, 99);
+            }
+        }// Used to add random numbers within 10 - 99 into neutrinos array
+
         #endregion
+
+
+        private void btnEnterData_Click(object sender, EventArgs e)
+        {
+            generateNumbers();
+            display();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            searchBinary();
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            sortBubble();
+        }
+
+        private void txtInput_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (lstArrayDisplay.SelectedIndex >= 0)
+                {
+                    edit(lstArrayDisplay.SelectedIndex);
+                    txtInput.Clear();
+                }
+                
+            }
+        }
     }
 }
