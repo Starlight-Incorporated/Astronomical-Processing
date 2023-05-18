@@ -32,9 +32,9 @@ namespace Astranomical_Processing
         public void display()
         {
             lstArrayDisplay.Items.Clear();
-            for (int count = 0; count < neutrinosArray.Length; count++)
+            for (int count = 0; count < neutrinosArray.Length; count++)// For each item in Array
             {
-                lstArrayDisplay.Items.Add(neutrinosArray[count]);
+                lstArrayDisplay.Items.Add(neutrinosArray[count]);// Display items in list box
             }
         }// Used to display the list in the listbox
 
@@ -44,17 +44,17 @@ namespace Astranomical_Processing
             int searchTerm = 0;
             bool parsed = false;
 
-            try
+            try// Try to parse string from textbox to an int
             {
                 searchTerm = Int32.Parse(input);
                 parsed = true;
             }
-            catch (FormatException)
+            catch (FormatException)// If parse is unsuccessful
             {
                 MessageBox.Show("Unable to parse " + input, "Error");
             }
             
-            if (parsed == true)
+            if (parsed == true)// If parsed is true then begin edit method
             {
                 neutrinosArray[editSelected] = searchTerm;
                 sortBubble();                
@@ -82,22 +82,22 @@ namespace Astranomical_Processing
             int searchTerm = 0;
             bool parsed = false;
 
-            if (txtInput.Text.Equals(""))
+            if (txtInput.Text.Equals(""))// if textbox blank then throw up error
             {
                 MessageBox.Show("Nothing entered", "Error");                
             }
 
-            try
+            try// Try to parse string from textbox to an int
             {
                 searchTerm = Int32.Parse(input);
                 parsed = true;
             }
-            catch (FormatException)
+            catch (FormatException)// If parse is unsuccessful
             {
                 MessageBox.Show("Unable to parse " + input, "Error");
             }
 
-            while (found != true && first <= last && parsed == true)
+            while (found != true && first <= last && parsed == true)// If parsed is true, search item not found, and first is less or equal to last then begin while loop
             {
                 int middle = (first + last) / 2;
 
@@ -157,29 +157,29 @@ namespace Astranomical_Processing
         {
             generateNumbers();
             display();
-        }
+        }// When the "enter" button is pressed, call these two methods
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             searchBinary();
-        }
+        }// When "search" button is pressed, call the binary search method
 
         private void btnSort_Click(object sender, EventArgs e)
         {
             sortBubble();
-        }
+        }// when the "sort" button is pressed, call the bubble sort method
 
         private void txtInput_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter) // If enter key is pressed
             {
-                if (lstArrayDisplay.SelectedIndex >= 0)
+                if (lstArrayDisplay.SelectedIndex >= 0)// and something is selected in the list box, then begin edit method
                 {
                     edit(lstArrayDisplay.SelectedIndex);
-                    txtInput.Clear();
-                }
-                
-            }
-        }
+                    txtInput.Clear();// clear textbox
+                }// End if statement
+
+            }// End if statement
+        }// When a valid integer is entered into the textbox and the enter key is pressed, call the edit method
     }
 }
