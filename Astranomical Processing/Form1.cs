@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Astranomical_Processing
 {
-    // Andrew Millett, Evan Waters, Starlight Inc., Sprint 1
-    // Date: 11/05/2023
-    // Version: 1
+    // Andrew Millett, Evan Waters, Starlight Inc., Sprint 2
+    // Date: 22/05/2023
+    // Version: 2
     // Astranomical Processing
     // The program will hold data about observed neutrino activity that has been input in an array.
-    // The program will feature 1 text box to input the data, 3 buttons 1 enter button to enter the input into the array, 1 button to search the array for specific entry,
-    // and 1 button to sort the array. It will also feature a list box to display the array.
+    // The program will now feature 4 new text boxes to display mathmatical functions, 4 new buttons each for a specific mathmatical function,
+    // and 1 new button adding a linear search function.
     
     public partial class Form1 : Form
     {
@@ -150,7 +150,38 @@ namespace Astranomical_Processing
             }
         }// Used to add random numbers within 10 - 99 into neutrinos array
 
+        public void searchLinear()
+        {
+
+        }// Linear search method to be called later, still in progress
+
+        #region Calculations
+
+        public void calculateMidRange()
+        {
+
+        }// Method to calculate the Mid-Range of the array, still in progress
+
+        public void calculateMode()
+        {
+
+        }// Method to calculate the Mode of the array, still in progress
+
+        public void calculateAverage()
+        {
+
+        }// Method to calculate the Average of the array, still in progress
+
+        public void calculateRange()
+        {
+
+        }// Method to calculate the Range of the array, still in progress
+
+        #endregion    
+        // Region containing calculation methods
+
         #endregion
+        // Region containing all methods used in program
 
 
         private void btnEnterData_Click(object sender, EventArgs e)
