@@ -152,30 +152,130 @@ namespace Astranomical_Processing
 
         public void searchLinear()
         {
+            bool found = false;
+            string input = txtInput.Text;
+            int searchTerm = 0;
+            bool parsed = false;
 
-        }// Linear search method to be called later, still in progress
+            if (txtInput.Text.Equals(""))
+            {
+                MessageBox.Show("Nothing entered", "Error");                
+            }
+
+            try// Try to parse string from textbox to an int
+            {
+                searchTerm = Int32.Parse(input);
+                parsed = true;
+            }
+            catch (FormatException)// If parse is unsuccessful
+            {
+                MessageBox.Show("Unable to parse " + input, "Error");
+            }
+
+            foreach (int item in neutrinosArray)
+            {
+                for (int i = 0; i < neutrinosArray.Length; i++)
+                {
+                    if (item == searchTerm)
+                    {
+                        found = true;
+                        i = neutrinosArray.Length;
+                    }
+                }
+            }
+            if (!found)
+            {
+                MessageBox.Show("Your search has not been found", "Error");
+            }
+            else
+            {
+                MessageBox.Show("Your search has been found", "Success!");
+            }
+        }// Linear search method to be called later
 
         #region Calculations
 
         public void calculateMidRange()
         {
+            int min = 0, max = 0;
 
-        }// Method to calculate the Mid-Range of the array, still in progress
+            for (int i = 0; i < neutrinosArray.Length - 1; i++)
+            {
+                if (neutrinosArray[i] > max)
+                {
+                    max = neutrinosArray[i];
+                }
+                if (neutrinosArray[i] < min)
+                {
+                    min = neutrinosArray[i];
+                }
+            }
+
+            double answer = (max + min) / 2;
+            txtMidRangeOutput.Text = answer.ToString();
+        }// Method to calculate the Mid-Range of the array
 
         public void calculateMode()
         {
+            sortBubble();
+                        
+            int maxValue = 0, maxCount = 0, i, j;
 
-        }// Method to calculate the Mode of the array, still in progress
+            for (i = 0; i < neutrinosArray.Length; i++)
+            {
+                int count = 0;
+                for (j = 0; j < neutrinosArray.Length; j++)
+                {
+                    if (neutrinosArray[j] == neutrinosArray[i])
+                    {
+                        count++;
+                    }
+                }
+
+                if (count > maxCount)
+                {
+                    maxCount = count;
+                    maxValue = neutrinosArray[i];
+                }
+            }
+
+            txtModeOutput.Text = maxValue.ToString();
+        }// Method to calculate the Mode of the array
 
         public void calculateAverage()
         {
+            int i = 0;
+            int sum = 0;
+            float average = 0.0F;
 
-        }// Method to calculate the Average of the array, still in progress
+            for (i = 0; i < neutrinosArray.Length - 1; i++)
+            {
+                sum += neutrinosArray[i];
+            }
+
+            average = (float)sum / neutrinosArray.Length;
+            txtAverageOutput.Text = average.ToString();
+        }// Method to calculate the Average of the array
 
         public void calculateRange()
         {
+            int min = 0, max = 0;
 
-        }// Method to calculate the Range of the array, still in progress
+            for (int i = 0; i < neutrinosArray.Length - 1; i++)
+            {
+                if (neutrinosArray[i] > max)
+                {
+                    max = neutrinosArray[i];
+                }
+                if (neutrinosArray[i] < min)
+                {
+                    min = neutrinosArray[i];
+                }
+            }
+
+            double answer = max - min;
+            txtRangeOutput.Text = answer.ToString();
+        }// Method to calculate the Range of the array
 
         #endregion    
         // Region containing calculation methods
@@ -192,12 +292,12 @@ namespace Astranomical_Processing
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            searchBinary();
+            searchBinary();            
         }// When "search" button is pressed, call the binary search method
 
         private void btnSort_Click(object sender, EventArgs e)
         {
-            sortBubble();
+            sortBubble();            
         }// when the "sort" button is pressed, call the bubble sort method
 
         private void txtInput_KeyUp(object sender, KeyEventArgs e)
