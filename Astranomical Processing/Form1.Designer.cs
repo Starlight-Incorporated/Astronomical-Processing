@@ -99,6 +99,7 @@
             this.btnLinearSearch.TabIndex = 5;
             this.btnLinearSearch.Text = "Sequential";
             this.btnLinearSearch.UseVisualStyleBackColor = true;
+            this.btnLinearSearch.Click += new System.EventHandler(this.btnLinearSearch_Click);
             // 
             // btnMidRange
             // 
@@ -108,6 +109,7 @@
             this.btnMidRange.TabIndex = 6;
             this.btnMidRange.Text = "Mid-Range";
             this.btnMidRange.UseVisualStyleBackColor = true;
+            this.btnMidRange.Click += new System.EventHandler(this.btnMidRange_Click);
             // 
             // btnMode
             // 
@@ -117,6 +119,7 @@
             this.btnMode.TabIndex = 7;
             this.btnMode.Text = "Mode";
             this.btnMode.UseVisualStyleBackColor = true;
+            this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
             // 
             // btnAverage
             // 
@@ -126,6 +129,7 @@
             this.btnAverage.TabIndex = 8;
             this.btnAverage.Text = "Average";
             this.btnAverage.UseVisualStyleBackColor = true;
+            this.btnAverage.Click += new System.EventHandler(this.btnAverage_Click);
             // 
             // btnRange
             // 
@@ -135,6 +139,7 @@
             this.btnRange.TabIndex = 9;
             this.btnRange.Text = "Range";
             this.btnRange.UseVisualStyleBackColor = true;
+            this.btnRange.Click += new System.EventHandler(this.btnRange_Click);
             // 
             // txtMidRangeOutput
             // 

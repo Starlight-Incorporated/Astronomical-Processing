@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace Astranomical_Processing
 {
@@ -107,7 +108,7 @@ namespace Astranomical_Processing
                     position = middle;
                     compCount++;
 
-                    MessageBox.Show("Your search has been found after " + compCount + " attempts.", "Success!");
+                    MessageBox.Show("Your search has been found at position " + (position + 1) + " in the array.", "Success!");
                     return;
                 }
 
@@ -155,8 +156,7 @@ namespace Astranomical_Processing
             bool found = false;
             string input = txtInput.Text;
             int searchTerm = 0;
-            bool parsed = false;
-
+            
             if (txtInput.Text.Equals(""))
             {
                 MessageBox.Show("Nothing entered", "Error");                
@@ -164,8 +164,7 @@ namespace Astranomical_Processing
 
             try// Try to parse string from textbox to an int
             {
-                searchTerm = Int32.Parse(input);
-                parsed = true;
+                searchTerm = Int32.Parse(input);                
             }
             catch (FormatException)// If parse is unsuccessful
             {
@@ -178,8 +177,7 @@ namespace Astranomical_Processing
                 {
                     if (item == searchTerm)
                     {
-                        found = true;
-                        i = neutrinosArray.Length;
+                        found = true;                        
                     }
                 }
             }
@@ -189,7 +187,7 @@ namespace Astranomical_Processing
             }
             else
             {
-                MessageBox.Show("Your search has been found", "Success!");
+                MessageBox.Show("Your search has been found in the array.", "Success!");
             }
         }// Linear search method to be called later
 
@@ -197,17 +195,17 @@ namespace Astranomical_Processing
 
         public void calculateMidRange()
         {
-            int min = 0, max = 0;
+            int min = neutrinosArray[0], max = neutrinosArray[0];
 
-            for (int i = 0; i < neutrinosArray.Length - 1; i++)
+            for (int index = 1; index < neutrinosArray.Length - 1; index++)
             {
-                if (neutrinosArray[i] > max)
+                if (neutrinosArray[index] > max)
                 {
-                    max = neutrinosArray[i];
+                    max = neutrinosArray[index];
                 }
-                if (neutrinosArray[i] < min)
+                if (neutrinosArray[index] < min)
                 {
-                    min = neutrinosArray[i];
+                    min = neutrinosArray[index];
                 }
             }
 
@@ -217,59 +215,67 @@ namespace Astranomical_Processing
 
         public void calculateMode()
         {
-            sortBubble();
-                        
-            int maxValue = 0, maxCount = 0, i, j;
+            int[] myCount = new int[100];
 
-            for (i = 0; i < neutrinosArray.Length; i++)
+            int maxCount = 0;
+            
+
+            for (int countOuter = 0; countOuter < neutrinosArray.Length - 1; countOuter++)
             {
-                int count = 0;
-                for (j = 0; j < neutrinosArray.Length; j++)
-                {
-                    if (neutrinosArray[j] == neutrinosArray[i])
-                    {
-                        count++;
-                    }
-                }
+                int temp = neutrinosArray[countOuter];
+                myCount[temp] = myCount[temp]+1;
+            }
 
-                if (count > maxCount)
+            for (int countInner = 0; countInner < myCount.Length - 1; countInner++)
+            {
+                if (myCount[countInner] > maxCount)
                 {
-                    maxCount = count;
-                    maxValue = neutrinosArray[i];
+                    maxCount = myCount[countInner];
+                    int mode = countInner;
                 }
             }
 
-            txtModeOutput.Text = maxValue.ToString();
+            string modeString = null;
+
+            for (int countInner = 1; countInner < myCount.Length; countInner++)
+            {
+                if (myCount[countInner] == maxCount)
+                {
+                    
+                    modeString = modeString + " " + countInner;
+                }
+            }
+           
+            txtModeOutput.Text = modeString;
+
         }// Method to calculate the Mode of the array
 
         public void calculateAverage()
         {
-            int i = 0;
             int sum = 0;
-            float average = 0.0F;
 
-            for (i = 0; i < neutrinosArray.Length - 1; i++)
+            for (int i = 0; i < neutrinosArray.Length; i++)
             {
                 sum += neutrinosArray[i];
             }
 
-            average = (float)sum / neutrinosArray.Length;
+            float average = (float)sum / neutrinosArray.Length;
             txtAverageOutput.Text = average.ToString();
         }// Method to calculate the Average of the array
 
         public void calculateRange()
         {
-            int min = 0, max = 0;
+            int min = neutrinosArray[0], max = neutrinosArray[0];
 
-            for (int i = 0; i < neutrinosArray.Length - 1; i++)
+            for (int index = 1; index < neutrinosArray.Length; index++)
             {
-                if (neutrinosArray[i] > max)
+                if (neutrinosArray[index] > max)
                 {
-                    max = neutrinosArray[i];
+                    max = neutrinosArray[index];
                 }
-                if (neutrinosArray[i] < min)
+                if (neutrinosArray[index] < min)
                 {
-                    min = neutrinosArray[i];
+                    min = neutrinosArray[index];
                 }
             }
 
@@ -312,5 +318,30 @@ namespace Astranomical_Processing
 
             }// End if statement
         }// When a valid integer is entered into the textbox and the enter key is pressed, call the edit method
+
+        private void btnMidRange_Click(object sender, EventArgs e)
+        {
+            calculateMidRange();
+        }
+
+        private void btnMode_Click(object sender, EventArgs e)
+        {
+            calculateMode();
+        }
+
+        private void btnAverage_Click(object sender, EventArgs e)
+        {
+            calculateAverage();
+        }
+
+        private void btnRange_Click(object sender, EventArgs e)
+        {
+            calculateRange();
+        }
+
+        private void btnLinearSearch_Click(object sender, EventArgs e)
+        {
+            searchLinear();
+        }
     }
 }
