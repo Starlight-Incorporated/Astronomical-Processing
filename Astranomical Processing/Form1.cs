@@ -343,5 +343,125 @@ namespace Astranomical_Processing
         {
             searchLinear();
         }
+
+        private void btnEnterData_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipEnter = new ToolTip();
+
+            tipEnter.Active = true;
+            tipEnter.InitialDelay = 400;
+            tipEnter.IsBalloon = true;
+            tipEnter.ToolTipIcon = ToolTipIcon.Info;
+            tipEnter.ToolTipTitle = "Enter Button";
+            tipEnter.SetToolTip(this.btnEnterData, "Press to enter random number into List");
+        }
+
+        private void btnSearch_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipSearch = new ToolTip();
+
+            tipSearch.Active = true;
+            tipSearch.InitialDelay = 400;
+            tipSearch.IsBalloon = true;
+            tipSearch.ToolTipIcon = ToolTipIcon.Info;
+            tipSearch.ToolTipTitle = "Search Button";
+            tipSearch.SetToolTip(this.btnSearch, "Press to search current list for entered number");
+        }
+
+        private void btnSort_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipSort = new ToolTip();
+
+            tipSort.Active = true;
+            tipSort.InitialDelay = 400;
+            tipSort.IsBalloon = true;
+            tipSort.ToolTipIcon = ToolTipIcon.Info;
+            tipSort.ToolTipTitle = "Sort Button";
+            tipSort.SetToolTip(this.btnSort, "Press to sort the current list");
+        }
+
+        private void btnLinearSearch_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipLinearSearch = new ToolTip();
+
+            tipLinearSearch.Active = true;
+            tipLinearSearch.InitialDelay = 400;
+            tipLinearSearch.IsBalloon = true;
+            tipLinearSearch.ToolTipIcon = ToolTipIcon.Info;
+            tipLinearSearch.ToolTipTitle = "Sequential Search Button";
+            tipLinearSearch.SetToolTip(this.btnLinearSearch, "Press to perform a sequential search of current list for entered number");
+        }
+
+        private void btnMidRange_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipMidRange = new ToolTip();
+
+            tipMidRange.Active = true;
+            tipMidRange.InitialDelay = 400;
+            tipMidRange.IsBalloon = true;
+            tipMidRange.ToolTipIcon = ToolTipIcon.Info;
+            tipMidRange.ToolTipTitle = "Mid-Range Button";
+            tipMidRange.SetToolTip(this.btnMidRange, "Press to calculate the Mid-Range of the current list");
+        }
+
+        private void btnMode_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipMode = new ToolTip();
+
+            tipMode.Active = true;
+            tipMode.InitialDelay = 400;
+            tipMode.IsBalloon = true;
+            tipMode.ToolTipIcon = ToolTipIcon.Info;
+            tipMode.ToolTipTitle = "Mode Button";
+            tipMode.SetToolTip(this.btnMode, "Press to calculate the Mode of the current list");
+        }
+
+        private void btnAverage_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipAverage = new ToolTip();
+
+            tipAverage.Active = true;
+            tipAverage.InitialDelay = 400;
+            tipAverage.IsBalloon = true;
+            tipAverage.ToolTipIcon = ToolTipIcon.Info;
+            tipAverage.ToolTipTitle = "Average Button";
+            tipAverage.SetToolTip(this.btnAverage, "Press to calculate the Average of the current list");
+        }
+
+        private void btnRange_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipRange = new ToolTip();
+
+            tipRange.Active = true;
+            tipRange.InitialDelay = 400;
+            tipRange.IsBalloon = true;
+            tipRange.ToolTipIcon = ToolTipIcon.Info;
+            tipRange.ToolTipTitle = "Range Button";
+            tipRange.SetToolTip(this.btnRange, "Press to calculate the Range of the current list");
+        }
+
+        private void txtInput_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipInput = new ToolTip();
+
+            tipInput.Active = true;
+            tipInput.InitialDelay = 400;
+            tipInput.IsBalloon = true;
+            tipInput.ToolTipIcon = ToolTipIcon.Info;
+            tipInput.ToolTipTitle = "Number Input";
+            tipInput.SetToolTip(this.txtInput, "Enter a number to search for");
+        }
+
+        private void lstArrayDisplay_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tipDisplay = new ToolTip();
+
+            tipDisplay.Active = true;
+            tipDisplay.InitialDelay = 400;
+            tipDisplay.IsBalloon = true;
+            tipDisplay.ToolTipIcon = ToolTipIcon.Info;
+            tipDisplay.ToolTipTitle = "Display";
+            tipDisplay.SetToolTip(this.lstArrayDisplay, "This is the current list");
+        }
     }
 }

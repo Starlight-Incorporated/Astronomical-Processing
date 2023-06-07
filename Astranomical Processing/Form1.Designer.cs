@@ -52,6 +52,7 @@
             this.txtInput.Size = new System.Drawing.Size(188, 20);
             this.txtInput.TabIndex = 0;
             this.txtInput.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyUp);
+            this.txtInput.MouseHover += new System.EventHandler(this.txtInput_MouseHover);
             // 
             // btnSearch
             // 
@@ -62,6 +63,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.MouseHover += new System.EventHandler(this.btnSearch_MouseHover);
             // 
             // btnSort
             // 
@@ -72,6 +74,7 @@
             this.btnSort.Text = "Sort";
             this.btnSort.UseVisualStyleBackColor = true;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            this.btnSort.MouseHover += new System.EventHandler(this.btnSort_MouseHover);
             // 
             // lstArrayDisplay
             // 
@@ -80,6 +83,7 @@
             this.lstArrayDisplay.Name = "lstArrayDisplay";
             this.lstArrayDisplay.Size = new System.Drawing.Size(188, 160);
             this.lstArrayDisplay.TabIndex = 3;
+            this.lstArrayDisplay.MouseHover += new System.EventHandler(this.lstArrayDisplay_MouseHover);
             // 
             // btnEnterData
             // 
@@ -90,6 +94,7 @@
             this.btnEnterData.Text = "Enter";
             this.btnEnterData.UseVisualStyleBackColor = true;
             this.btnEnterData.Click += new System.EventHandler(this.btnEnterData_Click);
+            this.btnEnterData.MouseHover += new System.EventHandler(this.btnEnterData_MouseHover);
             // 
             // btnLinearSearch
             // 
@@ -100,6 +105,7 @@
             this.btnLinearSearch.Text = "Sequential";
             this.btnLinearSearch.UseVisualStyleBackColor = true;
             this.btnLinearSearch.Click += new System.EventHandler(this.btnLinearSearch_Click);
+            this.btnLinearSearch.MouseHover += new System.EventHandler(this.btnLinearSearch_MouseHover);
             // 
             // btnMidRange
             // 
@@ -110,6 +116,7 @@
             this.btnMidRange.Text = "Mid-Range";
             this.btnMidRange.UseVisualStyleBackColor = true;
             this.btnMidRange.Click += new System.EventHandler(this.btnMidRange_Click);
+            this.btnMidRange.MouseHover += new System.EventHandler(this.btnMidRange_MouseHover);
             // 
             // btnMode
             // 
@@ -120,6 +127,7 @@
             this.btnMode.Text = "Mode";
             this.btnMode.UseVisualStyleBackColor = true;
             this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
+            this.btnMode.MouseHover += new System.EventHandler(this.btnMode_MouseHover);
             // 
             // btnAverage
             // 
@@ -130,6 +138,7 @@
             this.btnAverage.Text = "Average";
             this.btnAverage.UseVisualStyleBackColor = true;
             this.btnAverage.Click += new System.EventHandler(this.btnAverage_Click);
+            this.btnAverage.MouseHover += new System.EventHandler(this.btnAverage_MouseHover);
             // 
             // btnRange
             // 
@@ -140,6 +149,7 @@
             this.btnRange.Text = "Range";
             this.btnRange.UseVisualStyleBackColor = true;
             this.btnRange.Click += new System.EventHandler(this.btnRange_Click);
+            this.btnRange.MouseHover += new System.EventHandler(this.btnRange_MouseHover);
             // 
             // txtMidRangeOutput
             // 
