@@ -289,6 +289,7 @@ namespace Astranomical_Processing
         #endregion
         // Region containing all methods used in program
 
+        #region Button Actions
 
         private void btnEnterData_Click(object sender, EventArgs e)
         {
@@ -319,6 +320,8 @@ namespace Astranomical_Processing
             }// End if statement
         }// When a valid integer is entered into the textbox and the enter key is pressed, call the edit method
 
+        
+
         private void btnMidRange_Click(object sender, EventArgs e)
         {
             calculateMidRange();
@@ -343,6 +346,11 @@ namespace Astranomical_Processing
         {
             searchLinear();
         }
+
+        #endregion
+        // Region of Button Actions
+
+        #region Tooltips
 
         private void btnEnterData_MouseHover(object sender, EventArgs e)
         {
@@ -463,5 +471,8 @@ namespace Astranomical_Processing
             tipDisplay.ToolTipTitle = "Display";
             tipDisplay.SetToolTip(this.lstArrayDisplay, "This is the current list");
         }
+
+        #endregion  
+        // Region of tooltips
     }
 }
